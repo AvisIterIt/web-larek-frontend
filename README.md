@@ -59,7 +59,7 @@ UML схема - https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0
 Отвечает за выбор статуса оплаты пользователя.
 Взаимодействует с payment у Interfase IOrder. Передает выбранный пользователем метод оплаты.
 
-Enum принимает такие аргументы:
+Enum хранит в себе такие аргументы:
 
 1. Online:string - оплата онлайн
 2. Offline:string - оплата при получении
