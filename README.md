@@ -78,7 +78,7 @@ yarn build
 
 ### Базовый код
 
-#### 1. Класс `Api`
+#### 1. `Api`
 
 Класс для отправки HTTP-запросов. Используется для общения с сервером.
 
@@ -99,7 +99,7 @@ constructor(baseUrl: string, options: RequestInit = {})
 - `get(url: string): Promise<object>` — Выполняет GET-запрос по указанному URL.
 - `post(url: string, data: object, method: string): void` — Выполняет запрос с передачей данных по указанному методу (например, POST или PUT).
 
-#### 2. Класс `LarekApi`
+#### 2. `LarekApi`
 
 Расширяет `Api` для выполнения специфических задач интернет-магазина, таких как получение списка продуктов и отправка заказа.
 
@@ -120,7 +120,7 @@ constructor(cdn: string, baseUrl: string, options?: RequestInit)
 - `getProductList(): Promise<Product[]>` — Получает список продуктов из API.
 - `orderProducts(order: Order): Promise<OrderResult>` — Отправляет заказ на сервер и возвращает результат выполнения.
 
-#### 3. Класс `AppState`
+#### 3. `AppState`
 
 Управляет состоянием приложения, включая список продуктов, корзину, данные формы заказа, ошибки формы.
 
@@ -147,7 +147,7 @@ constructor()
 - `getTotal(): number` — Возвращает общую стоимость товаров в корзине.
 - `getCatalog(): Product[]` — Возвращает список продуктов.
 
-#### 4. Класс `EventEmitter`
+#### 4. `EventEmitter`
 
 Обеспечивает управление событиями, такими как подписка и триггеринг.
 
