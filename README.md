@@ -49,15 +49,15 @@ yarn build
 
 ## Общая архитектура
 
-1. **Данные (Data)**: Включают в себя классы для работы с продуктами, заказами, API, и состоянием приложения.\
-2. **Компоненты представления (View Components)**: Содержат элементы интерфейса, такие как карточки, корзина, формы, модальные окна.\
-3. **Управление событиями**: Реализовано с помощью `EventEmitter` для подписки и обработки различных событий в приложении.\
+1. **Данные (Data)**: Включают в себя классы для работы с продуктами, заказами, API, и состоянием приложения.
+2. **Компоненты представления (View Components)**: Содержат элементы интерфейса, такие как карточки, корзина, формы, модальные окна.
+3. **Управление событиями**: Реализовано с помощью `EventEmitter` для подписки и обработки различных событий в приложении.
 
 ## Назначение частей
 
-1. **Data**: Классы данных управляют информацией о продуктах и состоянии приложения, обеспечивают получение данных с сервера, их хранение и управление ими.\
-2. **View Components**: Обеспечивают отображение данных и взаимодействие с пользователем.\
-3. **EventEmitter**: Отвечает за управление событиями, обеспечивая возможность добавления подписчиков на события и их вызов.\
+1. **Data**: Классы данных управляют информацией о продуктах и состоянии приложения, обеспечивают получение данных с сервера, их хранение и управление ими.
+2. **View Components**: Обеспечивают отображение данных и взаимодействие с пользователем.
+3. **EventEmitter**: Отвечает за управление событиями, обеспечивая возможность добавления подписчиков на события и их вызов.
 
 ## Взаимодействие частей
 
@@ -67,9 +67,9 @@ yarn build
 
 ## Данные, используемые в приложении
 
-1. **Product**: Представляет информацию о продукте, такую как `id`, `description`, `image`, `title`, `category` и `price`.\
-2. **Order**: Информация о заказе, включающая `address`, `phone`, `email`.\
-3. **FormErrors**: Ошибки формы, используемые для валидации данных.\
+1. **Product**: Представляет информацию о продукте, такую как `id`, `description`, `image`, `title`, `category` и `price`.
+2. **Order**: Информация о заказе, включающая `address`, `phone`, `email`.
+3. **FormErrors**: Ошибки формы, используемые для валидации данных.
 4. **OrderResult**: Результат выполнения заказа, возвращаемый сервером.
 
 ---
@@ -90,14 +90,14 @@ constructor(baseUrl: string, options: RequestInit = {})
 
 **Аргументы**
 
-- **baseUrl**: `string` — базовый URL для всех запросов.\
-- **options**: `RequestInit` (опционально) — глобальные опции для всех запросов, например, заголовки.\
+- **baseUrl**: `string` — базовый URL для всех запросов.
+- **options**: `RequestInit` (опционально) — глобальные опции для всех запросов, например, заголовки.
 
 **Методы**
 
-- `handleResponse(response: Response): Promise<object>` — Обрабатывает ответ от сервера, преобразуя его в JSON.\
-- `get(url: string): Promise<object>` — Выполняет GET-запрос по указанному URL.\
-- `post(url: string, data: object, method: string): void` — Выполняет запрос с передачей данных по указанному методу (например, POST или PUT).\
+- `handleResponse(response: Response): Promise<object>` — Обрабатывает ответ от сервера, преобразуя его в JSON.
+- `get(url: string): Promise<object>` — Выполняет GET-запрос по указанному URL.
+- `post(url: string, data: object, method: string): void` — Выполняет запрос с передачей данных по указанному методу (например, POST или PUT).
 
 #### 2. Класс `LarekApi`
 
@@ -111,14 +111,14 @@ constructor(cdn: string, baseUrl: string, options?: RequestInit)
 
 **Аргументы**
 
-- **cdn**: `string` — URL для контента.\
-- **baseUrl**: `string` — базовый URL для API.\
-- **options**: `RequestInit` (опционально) — глобальные опции для всех запросов.\
+- **cdn**: `string` — URL для контента.
+- **baseUrl**: `string` — базовый URL для API.
+- **options**: `RequestInit` (опционально) — глобальные опции для всех запросов.
 
 **Методы**
 
-- `getProductList(): Promise<Product[]>` — Получает список продуктов из API.\
-- `orderProducts(order: Order): Promise<OrderResult>` — Отправляет заказ на сервер и возвращает результат выполнения.\
+- `getProductList(): Promise<Product[]>` — Получает список продуктов из API.
+- `orderProducts(order: Order): Promise<OrderResult>` — Отправляет заказ на сервер и возвращает результат выполнения.
 
 #### 3. Класс `AppState`
 
@@ -141,11 +141,11 @@ constructor()
 
 **Методы**
 
-- `setCatalog(catalog: Product[]): void` — Устанавливает каталог продуктов.\
-- `addToBasket(productId: string): void` — Добавляет продукт в корзину по его ID.\
-- `setOrderField(field: string, value: any): void` — Устанавливает значение для указанного поля формы.\
-- `getTotal(): number` — Возвращает общую стоимость товаров в корзине.\
-- `getCatalog(): Product[]` — Возвращает список продуктов.\
+- `setCatalog(catalog: Product[]): void` — Устанавливает каталог продуктов.
+- `addToBasket(productId: string): void` — Добавляет продукт в корзину по его ID.
+- `setOrderField(field: string, value: any): void` — Устанавливает значение для указанного поля формы.
+- `getTotal(): number` — Возвращает общую стоимость товаров в корзине.
+- `getCatalog(): Product[]` — Возвращает список продуктов.
 
 #### 4. Класс `EventEmitter`
 
@@ -165,9 +165,9 @@ constructor()
 
 **Методы**
 
-- `on(eventName: string, callback: (data: any) => void): void` — Добавляет подписчика для события.\
-- `off(eventName: string, callback: (data: any) => void): void` — Удаляет подписчика события.\
-- `trigger(eventName: string, context: any): void` — Вызывает событие с определенным контекстом.\
+- `on(eventName: string, callback: (data: any) => void): void` — Добавляет подписчика для события.
+- `off(eventName: string, callback: (data: any) => void): void` — Удаляет подписчика события.
+- `trigger(eventName: string, context: any): void` — Вызывает событие с определенным контекстом.
 
 ---
 
@@ -191,9 +191,9 @@ constructor()
 
 **Методы**
 
-- `toggleClass(element: HTMLElement, className: string, force?: boolean): void` — Добавляет или убирает CSS-класс у элемента.\
-- `setText(element: HTMLElement, text: string): void` — Устанавливает текст для элемента.\
-- `render(data: T): HTMLElement` — Создает и возвращает элемент HTML на основе переданных данных.\
+- `toggleClass(element: HTMLElement, className: string, force?: boolean): void` — Добавляет или убирает CSS-класс у элемента.
+- `setText(element: HTMLElement, text: string): void` — Устанавливает текст для элемента.
+- `render(data: T): HTMLElement` — Создает и возвращает элемент HTML на основе переданных данных.
 
 #### 2. `Card<T>`
 
@@ -201,15 +201,15 @@ constructor()
 
 **Аргументы**
 
-- **title**: `HTMLElement` — Элемент для отображения названия продукта.\
-- **category**: `HTMLElement` — Элемент для отображения категории.\
-- **price**: `HTMLElement` — Элемент для отображения цены.\
+- **title**: `HTMLElement` — Элемент для отображения названия продукта.
+- **category**: `HTMLElement` — Элемент для отображения категории.
+- **price**: `HTMLElement` — Элемент для отображения цены.
 
 **Методы**
 
-- `setTitle(value: string): void` — Устанавливает заголовок.\
-- `setCategory(value: string): void` — Устанавливает категорию.\
-- `setPrice(value: string): void` — Устанавливает цену.\
+- `setTitle(value: string): void` — Устанавливает заголовок.
+- `setCategory(value: string): void` — Устанавливает категорию.
+- `setPrice(value: string): void` — Устанавливает цену.
 
 #### 3. `Page`
 
@@ -217,15 +217,15 @@ constructor()
 
 **Аргументы**
 
-- **counter**: `HTMLElement` — Счетчик для отображения количества товаров.\
-- **catalog**: `HTMLElement` — Контейнер для каталога.\
-- **basket**: `HTMLElement` — Контейнер для корзины.\
+- **counter**: `HTMLElement` — Счетчик для отображения количества товаров.
+- **catalog**: `HTMLElement` — Контейнер для каталога.
+- **basket**: `HTMLElement` — Контейнер для корзины.
 
 **Методы**
 
-- `setCounter(value: number): void` — Устанавливает счетчик товаров.\
-- `setCatalog(items: Product[]): void` — Устанавливает каталог продуктов.\
-- `setBasket(items: Product[]): void` — Устанавливает содержимое корзины.\
+- `setCounter(value: number): void` — Устанавливает счетчик товаров.
+- `setCatalog(items: Product[]): void` — Устанавливает каталог продуктов.
+- `setBasket(items: Product[]): void` — Устанавливает содержимое корзины.
 
 #### 4. `Form<T>`
 
@@ -233,14 +233,14 @@ constructor()
 
 **Аргументы**
 
-- submit: `HTMLButtonElement` — Кнопка отправки.\
-- errors: `HTMLElement` — Элемент для отображения ошибок.\
+- submit: `HTMLButtonElement` — Кнопка отправки.
+- errors: `HTMLElement` — Элемент для отображения ошибок.
 
 **Методы**
 
-- `onInputChange(field: string, value: any): void` — Обрабатывает изменения полей формы.\
-- `setErrors(value: string): void` — Устанавливает ошибки формы.\
-- `render(initial: T): void` — Отображает форму с начальными значениями.\
+- `onInputChange(field: string, value: any): void` — Обрабатывает изменения полей формы.
+- `setErrors(value: string): void` — Устанавливает ошибки формы.
+- `render(initial: T): void` — Отображает форму с начальными значениями.
 
 #### 5. `Order`
 
@@ -248,13 +248,13 @@ constructor()
 
 **Аргументы**
 
-- **buttons**: `HTMLButtonElement[]` — Массив кнопок.\
-- **container**: `HTMLFormElement` — Контейнер формы.\
+- **buttons**: `HTMLButtonElement[]` — Массив кнопок.
+- **container**: `HTMLFormElement` — Контейнер формы.
 
 **Методы**
 
-- `setAddress(value: string): void` — Устанавливает адрес.\
-- `setPayment(name: string): void` — Устанавливает способ оплаты.\
+- `setAddress(value: string): void` — Устанавливает адрес.
+- `setPayment(name: string): void` — Устанавливает способ оплаты.
 
 #### 6. `Contacts`
 
@@ -266,12 +266,11 @@ constructor()
 
 **Методы**
 
-- `setPhone(value: string): void` — Устанавливает телефон.\
-- `setEmail(value: string): void` — Устанавливает email.\
+- `setPhone(value: string): void` — Устанавливает телефон.
+- `setEmail(value: string): void` — Устанавливает email.
 
 ---
 
 ## Обработка процессов в приложении
 
-Процессы в приложении реализованы через события с помощью `EventEmitter`. Это позволяет вызывать обновления\ и изменения в компонентах в ответ на действия пользователя или изменения состояния приложения. Данные\
-передаются через методы и свойства классов, обеспечивая потоковое взаимодействие между компонентами.\
+Процессы в приложении реализованы через события с помощью `EventEmitter`. Это позволяет вызывать обновления и изменения в компонентах в ответ на действия пользователя или изменения состояния приложения. Данные передаются через методы и свойства классов, обеспечивая потоковое взаимодействие между компонентами.
