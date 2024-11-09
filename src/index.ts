@@ -8,10 +8,10 @@ import { AppData, Product } from './components/AppData';
 import { Page } from './components/Page';
 import { Card, CardBasket, CardPreview } from './components/Card';
 import { Modal } from './components/common/Modal';
-import { Basket } from './components/common/Basket';
+import { Basket } from './components/Basket';
 import { Order, Contacts } from './components/Order';
 import { IOrderForm } from './types';
-import { Success } from './components/common/Success';
+import { Success } from './components/Success';
 
 const emitter = new EventEmitter();
 const api = new LarekApi(CDN_URL, API_URL);

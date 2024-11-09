@@ -27,7 +27,7 @@ export class AppData extends Model<IAppState> {
 	}
 
 	addToOrder(item: Product) {
-		if (!this.order.items.includes(item.id)) {
+		if (item.price !== null && !this.order.items.includes(item.id)) {
 			this.order.items.push(item.id);
 		}
 	}
@@ -47,7 +47,7 @@ export class AppData extends Model<IAppState> {
 	}
 
 	setProductBasket(item: Product) {
-		if (!this.basket.includes(item)) {
+		if (item.price !== null && !this.basket.includes(item)) {
 			this.basket.push(item);
 		}
 	}
@@ -70,7 +70,7 @@ export class AppData extends Model<IAppState> {
 
 	getTotal() {
 		return this.order.items.reduce(
-			(a, c) => a + this.catalog.find((it) => it.id === c).price,
+			(a, c) => a + this.catalog.find((it) => it.id === c)?.price || 0,
 			0
 		);
 	}

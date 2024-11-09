@@ -32,6 +32,6 @@ export class Page extends Component<IPage> {
 	}
 
 	set locked(value: boolean) {
-		this._wrapper.classList.toggle('page__wrapper_locked', value);
+		this.toggleClass(this._wrapper, 'page__wrapper_locked', value);
 	}
 }
